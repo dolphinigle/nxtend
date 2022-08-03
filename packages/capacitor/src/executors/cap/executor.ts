@@ -16,8 +16,10 @@ export default async function runExecutor(
   const runCommandsOptions: RunCommandsBuilderOptions = {
     cwd: projectRootPath,
     commands: [
-      command: `npx cap ${cmd}`,
-      forwardAllArgs: false,
+      {
+        command: `npx cap ${cmd}`,
+        forwardAllArgs: false,
+      },
     ],
   };
 
