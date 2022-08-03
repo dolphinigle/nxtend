@@ -15,7 +15,12 @@ export default async function runExecutor(
 
   const runCommandsOptions: RunCommandsBuilderOptions = {
     cwd: projectRootPath,
-    command: `firebase ${cmd}`,
+    commands: [
+      {
+        command: `firebase ${cmd}`,
+        forwardAllArgs: false,
+      },
+    ],
   };
 
   return await runCommands(runCommandsOptions, context);
